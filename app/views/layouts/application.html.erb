@@ -11,6 +11,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="app-grid">
+      <div>
+        <%= render 'layouts/navbar' %>
+      </div>
+      <div style='overflow-y:scroll; position:relative;'>
+        <%= yield %>
+      </div>
+      <div>
+        <%= render 'layouts/footer' %>
+      </div>
+    </div>
   </body>
 </html>
