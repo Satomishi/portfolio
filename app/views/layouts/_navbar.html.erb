@@ -1,22 +1,19 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <h2 class="m-0">Olivier KERMOAL</h2>
+  <div class="container-fluid justify-content-between p-0">
+    <% if current_page?(root_path) %>
+      <%= link_to "A propos", root_path, class: "nav-link active-link" %>
+    <% else %>
+      <%= link_to "A propos", root_path, class: "nav-link" %>
     <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" unless current_page?(root_path) %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Projets", "#", class: "nav-link" %>
-          </li>
-      </ul>
-    </div>
+    <% if current_page?(formations_path) %>
+      <%= link_to "Formations", formations_path, class: "nav-link active-link" %>
+    <% else %>
+      <%= link_to "Formations", formations_path, class: "nav-link" %>
+    <% end %>
+    <% if current_page?(experiences_path) %>
+      <%= link_to "Expériences", experiences_path, class: "nav-link active-link" %>
+    <% else %>
+      <%= link_to "Expériences", experiences_path, class: "nav-link" %>
+    <% end %>
   </div>
 </div>
